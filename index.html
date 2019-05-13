@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>vyplyrmkr</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.5/dist/js/bulma-extensions.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.5/dist/css/bulma-extensions.min.css">
+</head>
+
+<body>
+  <script src="js/java.js"></script>
+
+  <section class="hero is-small is-info is-bold">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          PlyrMkr
+        </h1>
+        <h2 class="subtitle">
+          ---
+        </h2>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <div class="container">
+        <!-- Main container -->
+        <nav class="level">
+          <!-- Left side -->
+          <div class="level-left">
+            <div class="level-item">
+              <div class="field has-addons">
+                <p class="control has-icons-left">
+                  <input class="input" placeholder="UUID" id="player_id">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-play"></i>
+                  </span>
+                </p>
+                <div class="control">
+                  <a class="button is-primary tooltip" onclick="example_uuid()" data-tooltip="Yukon player">
+                    <span class="icon is-small">
+                      <i class="fas fa-paw"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Middle -->
+          <div class="level-middle">
+            <div class="level-item">
+              <div class="field">
+                <p class="control has-icons-left">
+                  <span class="select">
+                    <select id="enviro_selected">
+                      <option selected value="staging">staging</option>
+                      <option value="staging-qa">staging-qa</option>
+                      <option value="staging-beast">staging-beast</option>
+                      <option value="staging-flash">staging-flash</option>
+                      <option value="staging-superman">staging-superman</option>
+                      <option value="staging-aquaman">staging-aquaman</option>
+                      <option value="staging-batman">staging-batman</option>
+                      <option value="staging-deadpool">staging-deadpool</option>
+                      <option value="staging-hawkgirl">staging-hawkgirl</option>
+                      <option value="staging-ironman">staging-ironman</option>
+                      <option value="staging-mysterion">staging-mysterion</option>
+                      <option value="staging-wasp">staging-wasp</option>
+                    </select>
+                  </span>
+                  <span class="icon is-small is-left">
+                    <i class="fab fa-envira"></i>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side -->
+          <div class="level-right">
+            <div class="level-item">
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="embed_type" id="v3">
+                  v3
+                </label>
+                <label class="radio">
+                  <input type="radio" name="embed_type" checked id="v4">
+                  v4
+                </label>
+              </div>
+            </div>
+            <div class="level-item">
+              <a class="button is-success " onclick="javascript:checkbox_test()" name="createVid">
+                <span class="icon is-small">
+                  <i class="fas fa-rocket"></i>
+                </span>
+                <span>Go</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="chapter" class="label">chapter</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input is-small" type="number" min="0" id="chapter">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="cc" class="label tooltip" data-tooltip="Closed Caption Language">cc</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input is-small" type="text" id="cc" placeholder="es / de / en" maxlength="5">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="redirect_url" class="label">redirect_url</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input is-small" type="url" id="redirect_url">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="type" class="label">type</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input is-small" type="text" id="type" maxlength="8">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="quality" class="label">quality</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input is-small" type="text" id="quality" maxlength="4">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="custom_id" class="label">custom_id</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input is-small" type="text" id="custom_id">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+
+        </div>
+        <div class="column">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section is-paddingless">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <p class="control">
+            <label class="checkbox tooltip" for="pomo" data-tooltip="Requires preview parameter">
+              <input type="checkbox" id="pomo" value="pomo=1" onclick="check()">
+              PoMo
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="preview">
+              <input type="checkbox" id="preview" value="preview=1">
+              preview
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="force_analytics">
+              <input type="checkbox" id="force_analytics" value="force_analytics=1">
+              force_analytics
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="disable_analytics">
+              <input type="checkbox" id="disable_analytics" value="disable_analytics=1">
+              disable_analytics
+            </label>
+          </p>
+        </div>
+        <div class="column">
+          <p class="control">
+            <label class="checkbox" for="autoplay">
+              <input type="checkbox" id="autoplay" value="autoplay=1">
+              autoplay
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox tooltip" for="viral_sharing" data-tooltip="=0 to disable">
+              <input type="checkbox" id="viral_sharing" value="viral_sharing=0">
+              viral_sharing
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox tooltip" for="embed_button" data-tooltip="=0 to disable">
+              <input type="checkbox" id="embed_button" value="embed_button=0">
+              embed_button
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="name_overlay">
+              <input type="checkbox" id="name_overlay" value="name_overlay=1">
+              name_overlay
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="control_360">
+              <input type="checkbox" id="control_360" value="control_360=1">
+              control_360
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="muted">
+              <input type="checkbox" id="muted" value="muted=1">
+              muted
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="redirect_whole_page">
+              <input type="checkbox" id="redirect_whole_page" value="redirect_whole_page=1">
+              redirect_whole_page
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="hidden_controls">
+              <input type="checkbox" id="hidden_controls" value="hidden_controls=1">
+              hidden_controls
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="playlist_always_open">
+              <input type="checkbox" id="playlist_always_open" value="playlist_always_open=1">
+              playlist_always_open
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="hide_playlist">
+              <input type="checkbox" id="hide_playlist" value="hide_playlist=1">
+              hide_playlist
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="playlist_start_open">
+              <input type="checkbox" id="playlist_start_open" value="playlist_start_open=1">
+              playlist_start_open
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="force_ctas">
+              <input type="checkbox" id="force_ctas" value="force_ctas=1">
+              force_ctas
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="disable_ctas">
+              <input type="checkbox" id="disable_ctas" value="disable_ctas=1">
+              disable_ctas
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="disable_redirect">
+              <input type="checkbox" id="disable_redirect" value="disable_redirect=1">
+              disable_redirect
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="disable_up_next">
+              <input type="checkbox" id="disable_up_next" value="disable_up_next=1">
+              disable_up_next
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="bwm_preview">
+              <input type="checkbox" id="bwm_preview" value="bwm_preview=1">
+              disable_ctas
+            </label>
+          </p>
+        </div>
+        <div class="column">
+          <p class="control">
+            <label class="checkbox" for="flash_first">
+              <input type="checkbox" id="flash_first" value="flash_first=1">
+              flash_first
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="force_https">
+              <input type="checkbox" id="force_https" value="force_https=1">
+              force_https
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="force_http">
+              <input type="checkbox" id="force_http" value="force_http=1">
+              force_http
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="first_frame">
+              <input type="checkbox" id="first_frame" value="first_frame=1">
+              first_frame
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox" for="loop">
+              <input type="checkbox" id="loop" value="loop=1">
+              loop
+            </label>
+          </p>
+          <p class="control">
+            <label class="checkbox tooltip" for="preload" data-tooltip="=none to disable">
+              <input type="checkbox" id="preload" value="preload=none">
+              preload
+            </label>
+          </p>
+        </div>
+        <div class="column">
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
