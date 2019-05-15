@@ -9,7 +9,7 @@ function example_uuid() {
 }
 
 // function will loop through all input tags and create
-// url string from checked checkboxes
+// url string from checked checkboxes. Also grab strings for params
 function checkbox_test() {
     var extraParam = '';
 
@@ -20,6 +20,22 @@ function checkbox_test() {
     var redirect = document.getElementById("redirect_url").value;
     if (redirect) {
         extraParam += "&redirect_url=" + redirect
+    }
+    var cc = document.getElementById("cc").value;
+    if (cc) {
+        extraParam += "&cc=" + cc
+    }
+    var type = document.getElementById("type").value;
+    if (type) {
+        extraParam += "&type=" + type
+    }
+    var quality = document.getElementById("quality").value;
+    if (quality) {
+        extraParam += "&quality=" + quality
+    }
+    var custom_id = document.getElementById("custom_id").value;
+    if (custom_id) {
+        extraParam += "&custom_id=" + custom_id
     }
     var env = document.getElementById("enviro_selected").value;
     var uuid = document.getElementById("player_id").value;
