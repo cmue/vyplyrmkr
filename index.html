@@ -129,7 +129,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-small" type="text" id="cc" placeholder="es / de / en" maxlength="5">
+                  <input class="input is-small is-lowercase" type="text" id="cc" placeholder="es / de / en" maxlength="5">
                 </p>
               </div>
             </div>
@@ -143,7 +143,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-small" type="url" id="redirect_url">
+                  <input class="input is-small is-lowercase" type="url" id="redirect_url">
                 </p>
               </div>
             </div>
@@ -154,9 +154,15 @@
             </div>
             <div class="field-body">
               <div class="field">
-                <p class="control">
-                  <input class="input is-small" type="text" id="type" maxlength="8">
-                </p>
+                <div class="control is-expanded">
+                  <div class="select is-small is-fullwidth">
+                    <select id="type">
+                      <option></option>
+                      <option value="lightbox">lightbox</option>
+                      <option value="iframe">iframe</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
