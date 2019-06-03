@@ -8,6 +8,20 @@ function example_uuid() {
     document.getElementById("player_id").value = "y8b3o9GRfs3aCp5aHJCf6L";
 }
 
+// set uuid for Players select options
+//special case for Personalized video
+function changeFunc() {
+    var selectBox = document.getElementById("players");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    if (selectedValue === "8xQUekqbypXJ8qdvMm6HRq") {
+        document.getElementById("player_id").value = selectedValue;
+        document.getElementById("custom_id").value = "Hk1vgA98GaHwTK6Af8rGev";
+    } else {
+        document.getElementById("player_id").value = selectedValue;
+        document.getElementById("custom_id").value = null;
+    }
+}
+
 // function will loop through all input tags and create
 // url string from checked checkboxes. Also grab strings for params
 function checkbox_test() {

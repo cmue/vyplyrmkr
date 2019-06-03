@@ -129,7 +129,8 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-small is-lowercase" type="text" id="cc" placeholder="es / de / en" maxlength="5">
+                  <input class="input is-small is-lowercase" type="text" id="cc" placeholder="es / de / en"
+                    maxlength="5">
                 </p>
               </div>
             </div>
@@ -202,7 +203,7 @@
       </div>
     </div>
   </section>
-  <section class="section is-paddingless">
+  <section class="section">
     <div class="container">
       <div class="columns">
         <div class="column">
@@ -368,6 +369,17 @@
           </p>
         </div>
         <div class="column">
+          <div class="select is-multiple">
+            <div class="field-label is-small">
+              <label for="players" class="label has-text-left">Players</label>
+            </div>
+            <select multiple size="8" id="players" name="players" onchange="changeFunc();">
+              <option value="ofqn6u3PfvaXqz1KvAx3Yp">Captions</option>
+              <option value="jgMunAFSb3WJwUy4sCQRSa">360 video</option>
+              <option value="3gYLRDEGD4nSRyF1ToN6Bb">Events</option>
+              <option value="8xQUekqbypXJ8qdvMm6HRq">Personalized Video</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
