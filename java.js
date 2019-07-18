@@ -31,6 +31,14 @@ function checkbox_test() {
     if (chap) {
         extraParam += '&chapter=' + chap
     }
+    var video_id = document.getElementById("video_id").value;
+    if (video_id) {
+        extraParam += '&video_id=' + video_id
+    }
+    var second = document.getElementById("seconds").value;
+    if (second) {
+        extraParam += '&second=' + second
+    }
     var redirect = document.getElementById("redirect_url").value;
     if (redirect) {
         extraParam += "&redirect_url=" + redirect
