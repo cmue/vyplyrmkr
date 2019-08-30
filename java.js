@@ -6,6 +6,8 @@ function check() {
 // paw button provides uuid of doggo video
 function example_uuid() {
     document.getElementById("player_id").value = "y8b3o9GRfs3aCp5aHJCf6L";
+    //clear out any selected players in Players list
+    document.getElementById("players").selectedIndex = -1; 
 }
 
 // set uuid for Players select options
