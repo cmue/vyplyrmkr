@@ -61,6 +61,10 @@ function checkbox_test() {
     if (custom_id) {
         extraParam += "&custom_id=" + custom_id
     }
+    var embed_version = document.getElementById("embed_version").value;
+    if (embed_version) {
+        extraParam += "&embed_version=" + embed_version
+    }
     var env = document.getElementById("enviro_selected").value;
     var uuid = document.getElementById("player_id").value;
     var counter = 0, // counter for checked checkboxes

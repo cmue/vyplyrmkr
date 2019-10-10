@@ -85,11 +85,13 @@
             <div class="level-item">
               <div class="control">
                 <label class="radio">
-                  <input type="radio" name="embed_type" id="v3">
+                  <input type="radio" name="embed_type" id="v3"
+                    onclick="document.getElementById('embed_version').disabled = true; document.getElementById('embed_version').value = null;">
                   v3
                 </label>
                 <label class="radio">
-                  <input type="radio" name="embed_type" checked id="v4">
+                  <input type="radio" name="embed_type" checked id="v4"
+                    onclick="document.getElementById('embed_version').disabled = false;">
                   v4
                 </label>
               </div>
@@ -110,6 +112,44 @@
   <section class="section">
     <div class="container">
       <div class="columns">
+        <div class="column is-one-third">
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="redirect_url" class="label">redirect_url</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input is-small is-lowercase" type="url" id="redirect_url">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="custom_id" class="label">custom_id</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input is-small" type="text" id="custom_id">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="embed_version" class="label">embed_version</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input is-small" id="embed_version">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="column">
           <div class="field is-horizontal">
             <div class="field-label is-small">
@@ -120,6 +160,39 @@
                 <p class="control">
                   <input class="input is-small" type="number" min="0" id="chapter">
                 </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="seconds" class="label">seconds</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input class="input is-small" type="number" min="0" id="seconds">
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="field is-horizontal">
+            <div class="field-label is-small">
+              <label for="type" class="label">type</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control is-expanded">
+                  <div class="select is-small is-fullwidth">
+                    <select id="type">
+                      <option></option>
+                      <option value="lightbox">lightbox</option>
+                      <option value="iframe">iframe</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -139,12 +212,12 @@
         <div class="column">
           <div class="field is-horizontal">
             <div class="field-label is-small">
-              <label for="seconds" class="label">seconds</label>
+              <label for="quality" class="label">quality</label>
             </div>
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-small" type="number" min="0" id="seconds">
+                  <input class="input is-small" type="text" id="quality" maxlength="4">
                 </p>
               </div>
             </div>
@@ -162,70 +235,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="column">
-          <div class="field is-horizontal">
-            <div class="field-label is-small">
-              <label for="redirect_url" class="label">redirect_url</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control">
-                  <input class="input is-small is-lowercase" type="url" id="redirect_url">
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="field is-horizontal">
-            <div class="field-label is-small">
-              <label for="type" class="label">type</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control is-expanded">
-                  <div class="select is-small is-fullwidth">
-                    <select id="type">
-                      <option></option>
-                      <option value="lightbox">lightbox</option>
-                      <option value="iframe">iframe</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          <div class="field is-horizontal">
-            <div class="field-label is-small">
-              <label for="quality" class="label">quality</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control">
-                  <input class="input is-small" type="text" id="quality" maxlength="4">
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="field is-horizontal">
-            <div class="field-label is-small">
-              <label for="custom_id" class="label">custom_id</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control">
-                  <input class="input is-small" type="text" id="custom_id">
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          
-        </div>
-        <div class="column">
-
         </div>
       </div>
     </div>
